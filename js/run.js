@@ -8,11 +8,11 @@ const pyObserver = new MutationObserver(_ => {
 });
 
 run.addEventListener("click", async function load() {
-  document.getElementById("terminal-content").innerHTML = `<py-script config='{"packages":${JSON.stringify(deps)}}' id="pyterm" terminal worker service-worker="./mini-coi.js">${editor.getValue()}</py-script>`
+  document.getElementById("terminal-content").innerHTML = `<py-script config='{"packages":${JSON.stringify(deps)}}' id="pyterm" terminal worker>${editor.getValue()}</py-script>`
   pyObserver.observe(terminalContent, { childList: true })
 }, false)
 
 repl.addEventListener("click", async function load() {
-  document.getElementById("terminal-content").innerHTML = `<py-script config='{"packages":${JSON.stringify(deps)}}' id="pyterm" terminal worker service-worker="./mini-coi.js">import code;code.interact()</py-script>`
+  document.getElementById("terminal-content").innerHTML = `<py-script config='{"packages":${JSON.stringify(deps)}}' id="pyterm" terminal worker>import code;code.interact()</py-script>`
   pyObserver.observe(terminalContent, { childList: true })
 }, false)
