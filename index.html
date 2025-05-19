@@ -16,8 +16,24 @@
 			<li id="deps">Dependencies</li>
 			<li id="run">Run</li>
 			<li id="repl">REPL</li>
+			<li>
+				<label for="keybind">Keys: </label>
+				<select id="keybind">
+					<option value="ace">Ace</option>
+					<option value="vim">Vim</option>
+					<option value="emacs">Emacs</option>
+					<option value="sublime">Sublime</option>
+					<option value="vscode">VSCode</option>
+				</select>
+			</li>
 		</ul>
 	</div>
+	<dialog id="plot-dialog">
+		<div id="plot"></div>
+		<form method="dialog">
+			<input type="submit" value="Ok">
+		</form>
+	</dialog>
 	<dialog id="deps-menu">
 		<h1>Manage Dependencies</h1>
 		<i style="color: darkgrey;">You can click on a dependency to remove it</i>
@@ -33,7 +49,7 @@
 	</dialog>
 	<div id="editor"></div>
 	<div id="terminal">
-		<div id="terminal-resize">Terminal</div>
+		<div id="terminal-resize">Terminal <span id="terminal-min">&#10006;</span></div>
 		<div id="terminal-content" style="height: 100px">
 		</div>
 	</div>
@@ -42,5 +58,6 @@
 	<script type="module" src="js/terminal.js"></script>
 	<script type="module" src="js/run.js"></script>
 	<script type="module" src="js/deps.js"></script>
+	<script type="module" src="js/plot.js"></script>
 </body>
 </html>

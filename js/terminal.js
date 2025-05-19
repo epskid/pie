@@ -1,16 +1,19 @@
 export const terminalContent = document.getElementById("terminal-content")
 const terminalResize = document.getElementById("terminal-resize")
+const terminalMin = document.getElementById("terminal-min")
 
-let moveY = 0
-
-let drag = false
-
-terminalResize.addEventListener("mousedown", function (e) {
-  drag = true
-  moveY = e.y
+terminalMin.addEventListener("click", e => {
+  terminalContent.style.height = "0px"
 })
 
-document.body.addEventListener("mousemove", function (e) {
+let moveY = 0
+let drag = false
+
+terminalResize.addEventListener("mousedown", e => {
+  drag = true
+})
+
+document.body.addEventListener("mousemove", e => {
   moveY = e.y
   if (drag) {
     terminalContent.style.height =
@@ -23,7 +26,7 @@ document.body.addEventListener("mousemove", function (e) {
   }
 })
 
-document.body.addEventListener("mouseup", function (e) {
+document.body.addEventListener("mouseup", e => {
   drag = false
 })
 

@@ -20,12 +20,12 @@ function renderDepList() {
   }
 }
 
-depsButton.onclick = _ => {
+depsButton.addEventListener("click", _ => {
   depsMenu.showModal()
   renderDepList()
-}
+})
 
-addDep.onkeyup = e => {
+addDep.addEventListener("keyup", e => {
   if (e.keyCode === 13) {
     const dep = addDep.value.trim()
     addDep.value = ""
@@ -34,4 +34,4 @@ addDep.onkeyup = e => {
       renderDepList()
     }
   }
-}
+})

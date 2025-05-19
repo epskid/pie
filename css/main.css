@@ -59,7 +59,7 @@ body {
   flex-grow: 1;
 }
 
-#deps-menu[open] {
+dialog[open] {
   position: absolute;
   z-index: 1000;
   left: 0;
@@ -85,13 +85,14 @@ form[method=dialog] input[type=submit] {
   border: 1px solid white;
   color: white;
   padding: 0.5rem;
+  margin: 0.5rem;
 }
 
 ::backdrop {
   background: rgba(0, 0, 0, 0.7);
 }
 
-input[type=text] {
+#add-dep {
   border: none;
   outline: none;
   background: #505050;
@@ -105,5 +106,25 @@ input[type=text] {
 }
 
 .dep {
-  cursor: not-allowed;
+  cursor: pointer;
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+select {
+  border: 5px solid darkgrey;
+  background: darkgrey;
+  padding: 0;
+  transition: 0.4s;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+#terminal-min {
+  position: absolute;
+  right: 0.5rem;
+  cursor: pointer;
 }
