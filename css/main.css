@@ -1,0 +1,109 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "JetBrains Mono", monospace !important;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-size: 0.9rem;
+	height: 100vh;
+	color: lightgrey;
+	overflow: hidden;
+}
+
+#menu {
+	border-block: 1px solid darkgrey;
+	background: #252525;
+}
+
+#menu ul {
+	list-style-type: none;
+	display: flex;
+}
+
+#menu ul li {
+	padding: 0.5rem;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#menu ul li:hover {
+	background: #222222;
+}
+
+#editor {
+	flex-grow: 1;
+	font-family: inherit !important;
+	font-size: inherit !important;
+}
+
+#terminal-resize {
+	font-weight: bold;
+	border-block: 1px solid darkgrey;
+	background: #252525;
+	width: 100%;
+	cursor: n-resize;
+	flex-shrink: 0;
+	position: relative;
+	user-select: none;
+	padding: 0.1rem;
+}
+
+#terminal-content {
+	background: rgb(25, 26, 25);
+	color: white;
+	font-family: monospace;
+	flex-grow: 1;
+}
+
+#deps-menu[open] {
+	position: absolute;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+	padding: 1rem;
+	background: #282828;
+	border: 1px solid white;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form[method=dialog] input[type=submit] {
+	border: none;
+	background: #505050;
+	border: 1px solid white;
+	color: white;
+	padding: 0.5rem;
+}
+
+::backdrop {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+input[type=text] {
+	border: none;
+	outline: none;
+	background: #505050;
+	border: 1px solid white;
+	color: white;
+	padding: 0.5rem;
+}
+
+#dep-list {
+	margin: 0.5rem;
+}
+
+.dep {
+	cursor: not-allowed;
+}
