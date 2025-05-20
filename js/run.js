@@ -10,7 +10,7 @@ const pyObserver = new MutationObserver(_ => {
 // patch python modules to work nicer on pie
 const shims = {
   // makes plt.show() work
-  matplotlib: "import matplotlib.pyplot;import pyscript;matplotlib.pyplot.show=lambda:pyscript.display(*map(plt.figure,plt.get_fignums()),target='plot')"
+  matplotlib: "import matplotlib.pyplot;import pyscript;matplotlib.pyplot.show=lambda:pyscript.display(*map(matplotlib.pyplot.figure,matplotlib.pyplot.get_fignums()),target='plot')"
 }
 
 function runCode(code) {

@@ -45,7 +45,7 @@ body {
   border-block: 1px solid darkgrey;
   background: #252525;
   width: 100%;
-  cursor: n-resize;
+  cursor: ns-resize;
   flex-shrink: 0;
   position: relative;
   user-select: none;
